@@ -1,0 +1,4 @@
+réduit la demande de calcul
+	- réduit la consommation d'énergie
+		- gain economique
+	- reduction du temps de réponse au client

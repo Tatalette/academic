@@ -1,0 +1,51 @@
+body {
+    background-color: lightgreen;
+    }
+    .intro {
+    color: black;
+    text-align: left;
+    }
+    input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid green;
+    border-radius: 8px;
+    }
+    input[type=text]:focus {
+    background-color: lightgrey;
+    }
+    input[type=submit] {
+    background-color: lightgrey;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid green;
+    border-radius: 8px;
+    }
+    div.un {
+    width: 320px;
+    border: 0px solid green;
+    margin: 0;
+    border-radius: 8px;
+    }
+    div.deux {
+    width: 80%;
+    padding: 10px;
+    border: 5px solid green;
+    margin: 0;
+    border-radius: 8px;
+    }
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    table, th, td {
+    border: 1px solid green;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid green;
+    }
+    tr:hover {background-color: #f5f5f5;}
+    tr:nth-child(even) {background-color: #f2f2f2;}
