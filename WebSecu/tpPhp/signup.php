@@ -9,7 +9,7 @@
 <body class="bg-gray-100 flex justify-center items-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-96">
         <h2 class="text-2xl font-semibold text-center mb-6">Créer un compte</h2>
-        <form action="signup_action.php" method="POST" id="signup-form">
+        <form action="model/signup_action.php" method="POST" id="signup-form">
             <div class="mb-4">
                 <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
                 <input type="text" id="first-name" name="prenom" required class="w-full p-2 border border-gray-300 rounded mt-1">

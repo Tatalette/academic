@@ -25,7 +25,7 @@
         
             //echo "Utilisateur ajouté avec succès !";
             // Redirige vers index.php
-            header("Location: index.php");
+            header("Location: ../index.php");
         } catch (PDOException $e) {
             die("Erreur lors de l'insertion : " . $e->getMessage());
         }

@@ -18,9 +18,10 @@
                 if (password_verify($password, $user['pwd_user'])) {
                     session_start();
                     $_SESSION['id_user'] = $user['id_user'];
-                    header("Location: form.php");
+                    $_SESSION['nom_user'] = $user['nom_user'];
+                    header("Location: ../form.php");
                 } else {
-                    header("Location: form.php");
+                    header("Location: ../index.php");
                 }
             } else {
                 echo "Aucun utilisateur trouvé avec cet email.";

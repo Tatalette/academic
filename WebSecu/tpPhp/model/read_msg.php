@@ -1,7 +1,7 @@
 <?php
     include "connection.php";
     try {
-        $sql = "SELECT user_msg, txt_msg, date_msg FROM msg_table";
+        $sql = "SELECT id_msg, user_msg, txt_msg, date_msg, nom_user FROM msg_table JOIN user_table ON msg_table.user_msg = user_table.id_user";
 
         $stmt = $pdo->prepare($sql);
 

@@ -21,7 +21,7 @@
             $stmt->execute($data);
             //echo "Utilisateur ajouté avec succès !";
             // Redirige vers index.php
-            header("Location: form.php");
+            header("Location: ../form.php");
         } catch (PDOException $e) {
             die("Erreur lors de l'insertion : " . $e->getMessage());
         }
