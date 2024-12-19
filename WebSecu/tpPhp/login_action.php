@@ -4,7 +4,7 @@
         $email = htmlspecialchars(trim($_POST['email']));
         $password = htmlspecialchars(trim($_POST['password']));
         try {
-            $sql = "SELECT nom_user,prenom_user,pwd_user FROM user_table WHERE email_user = :email";
+            $sql = "SELECT nom_user,prenom_user,pwd_user, id_user FROM user_table WHERE email_user = :email";
             // Préparer la requête
             $stmt = $pdo->prepare($sql);
         
@@ -17,6 +17,7 @@
                 // Comparaison du mot de passe avec le hachage
                 if (password_verify($password, $user['pwd_user'])) {
                     session_start();
+                    $_SESSION['id_user'] = $user['id_user'];
                     header("Location: form.php");
                 } else {
                     header("Location: form.php");
