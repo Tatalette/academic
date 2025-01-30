@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         'password' => $hashedPassword
     ]
 
-    $xmlFile = new DOMDocument('1.0','utf-8'),
+    $xmlFile = new DOMDocument('1.0','utf-8');
     $xmlFile->appendChild($compte = $xmlFile ->createElement('compte'))
     
     }
