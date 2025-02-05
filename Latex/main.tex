@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T1]{fontenc} %dépendance du package babel
+\usepackage[french]{babel} %pour permettre l'encodage des caractéristiques de la langue française
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % Ajustez la valeur de de la marge à gauche
+\setlength{\parskip}{10pt} % Ajuste l'espace entre les paragraphes
+\usepackage{amsmath,amssymb}
+
+\newcommand{\ols}[1]{\mskip.5\thinmuskip\overline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip} % overline short
+
+
+\title{Fiche de maths et algorithmique en \LaTeX}
+\author{AJGS Ch}
+\date{January 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{\underline{Calcul moyenne pondérée}}
+
+    \noindent Une moyenne pondérée se calcul de la manière suivante :
+        \\On additionne tout les nombres multiplié au préalable par leur coefficient, et cette addition est divisée par la somme de tout les coefficients qui viennen d'être impliqués.
+        
+    \noindent Soit $x_1$, $x_2$, ..., $x_n$ une liste de nombres, de coefficient $c_1$,$c_2$,...,$c_n$. La moyenne pondérée est la valeur suivante :
+
+    \begin{equation*}
+        \ols{X} = \frac{\sum_{k=1}^n x_k \times c_k}{\sum_{k=1}^n x_k}
+    \end{equation*}
+    
+
+    \normalsize \noindent Exemple :
+    \\A l'uni, on obtient un 14 coeff 1 et un 9 coeff 2. La moyenne est donc :
+    
+\section{\underline{Méthode des rectangles}}
+
+    La méthode des rectangles consiste à calculer l'air d'une fonction, à l'aide de rectangles. Cette somme de rectangle permet de calculer approximativement l'air de la courbe entre son ordonnée à un point $x_n$ avec $n \in \mathbb{N} $ et d'ordonnée $y = 0$ pour $x,y \in \mathbb{R}$.
+
+    On découpe donc l'axe des abscisses $n$ fois entre $x_0$ et $x_n$. Pour $n$ découpe, on a donc $n+1$ rectangle. Plus $n \xrightarrow{} \infty$.
+    
+    Pour calculer un rectangle, on procède de la manière suivante :
+    
+    Pour $n \in \mathbb{N}$, et $x,y \in \mathbb{R} $, $\Delta x = x_n - x_{n-1}$, et pour la hauteur, on prend soit le point d'ordonnée $y=f(x_{n-1})$, soit on prend le point 
+    d'ordonnée $y=f(x_n)$. Cependant, seule l'une des formules peut-être utilisée. Une moyenne des deux formules est par contre possible.
+    
+    Factuellement, cela nous donne donc :
+    
+    Pour une intégrale
+    \begin{equation*}
+        \int_{a}^{b} f(x) \,dx
+    \end{equation*},
+
+    Pour $n \in \mathbb{N} $ découpe, on a
+
+\section{\underline{La méthode de recherche Dichotomique}}
+
+    Cette méthode permet de réduire et de retrouver un nombre dans une liste déjà préalablement triée.
+
+    Les itérations d'un algorithme de recherche dichotomique consistent à diviser une liste de nombre en deux, et de garder la liste selon le résultat booléen lorsque l'on compare le nombre recherché à la médiane.
+    On réitère l'opération jusqu'à ce que le nombre recherché soit trouvé (par ailleurs, si le nombre recherché se trouve être un nombre situé au milieu à n itération, on récupère l'index et on arrête l'opération, sauf si le souhaite trouver x fois ce nombre).
+
+    AU niveau de l'algorithme, si la liste est impaire, la première itération récupèrera la médiane comme milieu. Une fois la comparaison faite, toutes les autres listes seront cependant pair. De même, si la liste d'origine est pair, toutes les autres itérations se feront sur une liste pair.
+    
+    \textit{Exemple }:
+
+    Prenons le cas de la liste ordonnée suivante : {3,10,18,21,22,31,33,44,61}.
+    Le nombre recherché est 61.
+    Or, le nombre se trouve dans une liste impaire, on a donc une médiane à la première itération qui sera comparée.
+    
+    
+\end{document}
