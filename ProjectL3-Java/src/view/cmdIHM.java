@@ -25,7 +25,7 @@ public class cmdIHM implements IHM {
                 return;
             }
 
-            System.out.println(ctrl.recherche(c));
+            System.out.println(ctrl.rechercheCMD(c));
 
         }
     }
@@ -34,8 +34,7 @@ public class cmdIHM implements IHM {
         System.out.println("Livres de recette");
     }
 
-    public void clear()
-    {
+    public void clear() {
         try {
             if (System.getProperty("os.name").contains("Windows"))
                 Runtime.getRuntime().exec("cls");
@@ -46,6 +45,8 @@ public class cmdIHM implements IHM {
             System.err.println(e.getMessage());
         }
     }
+
+    public void afficherRecette() {};
 
     public void clearBis() {
         for (int i = 0; i < 25; i++)

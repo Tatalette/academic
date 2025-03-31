@@ -1,5 +1,6 @@
 package model;
 
+import java.net.ServerSocket;
 import java.util.ArrayList;
 
 public class Search {
@@ -12,7 +13,6 @@ public class Search {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     public ArrayList<ArrayList<Object>> SimpleSearch(String str) {
@@ -20,10 +20,11 @@ public class Search {
 //        String where = "nom_recette CONTAINS '"+str+"'";
         try {
             return  conn.select("Recette", "*", where);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return null;
     }
+
+
 }

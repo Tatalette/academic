@@ -37,7 +37,9 @@ public class DBConnector {
         try {
             String url = "jdbc:mysql://" + ipAddress + ":" + port + "/" + db;
             this.conn = DriverManager.getConnection(url, user, pass);
-
+            if (this.conn == null) {
+                throw new SQLException("DBConnector.connect(): NullConnector");
+            }
         } catch (Exception e) {
             throw new SQLException("DBConnector.connect(): "+ e.getMessage());
         }
