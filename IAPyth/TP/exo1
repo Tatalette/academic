@@ -1,0 +1,15 @@
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib as pl
+
+DATA = pd.read_csv('Penguins.csv',delimiter=';')
+
+print(DATA[DATA.isna().any(axis=1 == True)])
+
+DATA = DATA.drop(DATA.index[(3)])
+
+male_avg_weight = DATA[DATA['sex']=='male']['body_mass_g'].mean()
+female_avg_weight = DATA[DATA['sex']=='female']['body_mass_g'].mean()
+print(f'Male avg weight: ',male_avg_weight)
+    

@@ -16,7 +16,12 @@ class TestCalculator {
     void testAdd() {
         assertEquals(2, calculator.add(1, 1));
     }
-    @DisplayName("Test prod 10x2")
+    @DisplayName("Test add")
+	@Test
+	void testAdd() {
+	    assertEquals(2, calculator.add(1, 1));
+	}
+	@DisplayName("Test prod 10x2")
     @Test
     void testSuccesProd() {
         assertEquals(20, calculator.prod(10, 2));
