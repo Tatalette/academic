@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  # php-apache:
+  #   ports:
+  #     - "80:80"
+  #   build: './build/php'
+  #   volumes:
+  #     - ./app:/var/www/html
+  mysql:
+    ports:
+      - "3306:3306"
+    build: './build/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "ProjectDB"
+      MYSQL_USER: "toor"
+      MYSQL_PASSWORD: "toor"
+    volumes:
+      - dbData:/var/lib/mysql
+  phpmyadmin:
+    container_name: PMA
+    image: phpmyadmin/phpmyadmin
+    environment:
+        - PMA_HOST=mysql
+        - PMA_PORT=3306
+    ports:
+        - 8001:80
+    volumes:
+        - /sessions
+volumes:
+  app:
+  dbData:
