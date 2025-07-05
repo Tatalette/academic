@@ -1,0 +1,117 @@
+html {
+    margin: auto;
+}
+
+body {
+    font-family: 'Arial';
+	background-image: url("./images/background.jpg");
+	background-size: cover;
+}
+
+#menu {
+	background-color: black;
+	color: white;
+	position: absolute;
+	border-radius: 10px;
+	height: 300px;
+	left:38%;
+	padding-top: 20px;
+	padding-right: 20px;
+	font-size: 18px;
+}
+
+#menu a:visited {
+	color: white;
+}
+
+#menu p{
+	text-decoration:underline;
+}
+
+a{
+	text-decoration:none;
+}
+
+h1 {
+	text-align: center;
+	background-color: #000000;
+	color: white;
+	padding : 20px;
+	border-radius: 10px;
+}
+
+body > footer, body > header {
+  text-align:center;
+  background-color: black;
+  padding-top:10px;
+}
+
+#liens {
+	color: black;
+	background:white;
+	right: 50%;
+}
+
+#liens a:visited {
+	color: black;
+}
+
+header a:visited{
+	color:white;
+}
+
+#note {
+	color: white;
+	background: black;
+	font-size: 20px;
+	padding:20xp;
+}
+
+form{
+	padding:60px;
+	background-color:DarkCyan;
+	font-weight: bold;
+}
+
+input[type='text']{
+	width:400px;
+	padding:10px;
+	font-size:16pt;
+	border:none;
+	outline:none;
+}
+
+input[type='submit']{
+	width:200px;
+	padding:10px;
+	font-size:16pt;
+	border:none;
+	outline:none;
+	cursor:pointer;
+	color = white;
+}
+
+#mod{
+	display:flex;
+}
+
+#mod form{
+	margin-right: 10px;
+}
+
+#mod input[type="submit"] {
+    margin-top: 10px;
+}
+
+#modification {
+    background-color: navy;
+    color: white;
+    font-size: 1.5em;
+    padding: 10px;
+	text-align:center;
+}
+
+#petit{
+	font-size:smaller;
+	color:Cyan;
+}

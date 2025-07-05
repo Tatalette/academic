@@ -1,0 +1,180 @@
+/* Global */
+*{
+	margin:0px;
+	padding:0px;
+	font-family: Helvetica, sans-serif;
+}
+
+/* Menu Sticky */
+
+nav ul{
+	list-style-type:none;
+}
+
+nav li{
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+nav ul::after{
+	content:"";
+	display: table;
+	clear: both;
+}
+
+nav{
+	border: 2px solid black;
+	width:100%;
+	height: 30px;
+	margin:0 auto;
+	background-color:white;
+	position: sticky;
+	top: 0px;
+	align-content:center;
+	justify-content: center;
+}
+
+nav a{
+	display: bloc;
+	text-decoration: none;
+	color: black;
+	border-bottom: 2px solid transparent;
+	padding: 10px 0px;
+}
+
+nav a:hover{
+	color: orange;
+	border-bottom: 2px solid gold;
+}
+
+/* menu sticky déroulant */
+
+#sous{
+	display: none;
+	box-shadow :0px 1px 2px #CCC;
+	background-color: white;
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+	padding: 10px;
+}
+
+nav > ul li:hover #sous{
+	display:block;
+}
+
+#sous li{
+	padding: 10px;
+	float: none;
+	width: 100%;
+	text-align: left;
+}
+
+#sous a{
+	padding: 10px;
+	border-bottom: none;
+}
+
+#sous a:hover{
+	border-bottom: none;
+	background-color: RGBa(200,200,200,0.1);
+}
+
+#deroulant > a::after{
+	content: normal;
+	font-size: 12px;
+}
+
+nav ul li{
+	float:left;
+	width: 25%;
+	text-align: center;
+	position: relative;
+}
+
+/* mise en page */
+
+header {
+    background-color: lightblue;
+	width: 100%;
+	height: 30px;;
+	display: flex;
+    justify-content: right;
+    align-items: center; 
+}
+
+header div {
+    background-color: white;
+    border: 1px solid black;
+    transition: background-color 0.3s; 
+	float: right;
+	border-radius: 5px;
+}
+
+header div:hover {
+    background-color: lightgray;/
+    cursor: pointer;
+}
+
+a{
+	color: black;
+	text-decoration:none;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background-color: black; 
+    padding: 10px; 
+}
+
+h2 {
+	text-align: center;
+    color: white;
+    background-color: black; 
+    padding: 10px; 
+}
+#menu{
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+	font-size: 30px;
+}
+
+table{
+	position: center;
+	margin-left: auto;
+    margin-right: auto;
+	padding: 5px;
+}
+
+#fond{
+	background-color: white;
+}
+
+#produit{
+	background-color: white;
+}
+
+table td{
+	padding: 5px;
+}
+
+#quantite{
+	text-align: center;
+}
+
+#admin{
+	position: center;
+	margin-left: auto;
+    margin-right: auto;
+	padding: 5px;
+	text-align: center;
+	background-color: white;
+}
+
+body {
+	background-image: url("./images/fond.jpg");
+	background-size: cover;
+}

@@ -1,0 +1,18 @@
+CREATE TABLE MEMBRE(
+	pseudo VARCHAR(15) PRIMARY KEY NOT NULL,
+	age FLOAT NOT NULL,
+	genre CHAR(2) CHECK(genre IN('F','M','B','NB','NE'))
+)ENGINE=InnoDB;
+
+CREATE TABLE RANDONNEE(
+	numRando INT(1) PRIMARY KEY AUTO_INCREMENT,
+	titre VARCHAR(20) NOT NULL,
+	dateDep DATE NOT NULL
+)ENGINE=InnoDB;
+
+CREATE TABLE PARTICIPATION(
+    numRando INT,
+    pseudo VARCHAR(15),
+    CONSTRAINT fk_numRando FOREIGN KEY (numRando) REFERENCES randonnee(numRando),
+    CONSTRAINT fk_pseudo FOREIGN KEY (pseudo) REFERENCES membre(pseudo)
+) ENGINE=InnoDB;

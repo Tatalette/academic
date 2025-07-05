@@ -10,6 +10,10 @@ from sklearn.model_selection import cross_val_score
 from sklearn.base import BaseEstimator
 from sklearn.model_selection import cross_val_predict
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+from sklearn.multiclass import OneVsOneClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 mnist = fetch_openml('mnist_784')
 
@@ -73,9 +77,47 @@ y_train_pred = cross_val_predict(sgd_clf, x_train, y_train_5, cv=3)
 resultat = confusion_matrix(y_train_5, y_train_pred)
 print("Résultat du confusion_matrix : ",resultat)
 
+"""Question 5.1 : """
+precision = precision_score(y_train_5, y_train_pred)
+recall =  recall_score(y_train_5, y_train_pred)
+print("Précision : ",precision)
+print("Rappel : ",recall)
+
+"""Question 6 : """
+print("###-------SGD multi classe-------###")
+""" 6.1 """
+
+sgd_clf.fit(x_train, y_train)
+prediction_mult = sgd_clf.predict([some_digit])
+print("La prédiction multiclasse est de : ",prediction_mult)
+
+""" 6.2 """
+
+ovo_clf = OneVsOneClassifier(SGDClassifier(random_state=42))
+ovo_clf.fit(x_train, y_train)
+prediction_ovo = ovo_clf.predict([some_digit])
+
+print("La prédiction OVO est de : ",prediction_ovo)
+print("Nombre de classifieurs binaires entraînés (OvO) : ", len(ovo_clf.estimators_))
+
+""" 6.3 """
+
+forest_clf = RandomForestClassifier(random_state=42)
+forest_clf.fit(x_train, y_train)
+forest_prediction = forest_clf.predict([some_digit])
+print("La prédiction Random Forest est de : ",forest_prediction)
+forest_proba = forest_clf.predict_proba([some_digit])
+print("Probabilité de chaque classe : ",forest_proba)
+
+""" 6.4 """
+
+forest_prec = cross_val_score(forest_clf, x_train, y_train, cv=3, scoring="accuracy")
+print("Précision de la forêt aléatoire : ",forest_prec)
+
 """ Show image mathplotlib"""
 plt.imshow(some_digit_image, cmap = matplotlib.cm.binary, interpolation="nearest")
 plt.axis("off")
 plt.show()
+
 
 print("end of test")
